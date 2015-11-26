@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load l10n %}
+{% load tz %}
+
+{% block result %}
+<div class="jumbotron">
+	<div class="container">
+	    <!-- Example row of columns -->
+	    <div class="row">
+	      <div class="col-md-4">
+				<h4>{{result}}</h4>
+
+				<p>Please send us feedback about result:</p>
+				<form method="post" action="{% url 'success' %}">
+					{% csrf_token %}
+					<fieldset>
+			           <legend>	The result was:</legend>
+			           <input type="radio" name="feedback" value="positive" checked/>Positive <br />
+			           <input type="radio" name="feedback" value="negative" />Negative<br />
+			           <input type="submit" value="Submit now" />
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock result %}
+

@@ -29,8 +29,17 @@ def search(request):
     import random
     sentiment = ['positive', 'negative']
     if 'q' in request.GET:
-        message = '<h1>Sentiment of this document is {0}</h1>'.format(
+        message = 'The sentiment of this document is {0}'.format(
             random.choice(sentiment))
     else:
         message = 'You submitted an empty form.'
-    return HttpResponse(message)
+    return render(request,
+                  'sentimeter/result.html',
+                  {'result': message, })
+
+
+def feedback_thanks(request):
+    message = 'Thank you for your feedback'
+    return render(request,
+                  'sentimeter/success.html',
+                  {'success': message})

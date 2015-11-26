@@ -5,7 +5,7 @@
    ========================================================================== */
 
 
-.jumbotron h1 {
+.jumbotron h1,h4 {
     color: Grey;
     font-family: 'Roboto Condensed', sans-serif;
 

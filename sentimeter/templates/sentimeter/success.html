@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% load i18n %}
+{% load l10n %}
+{% load tz %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="container">
+	<div class="row">
+		  <div class="col-lg-6 col-md-8 col-sm-8 col-lg-offset-3 col-md-offset-2 col-sm-offset-2">
+		  	<h3>{{ success}}</h3>
+		  </div>
+	</div>
+</div>
+
+{% endblock content %}
+
+
+{% block footer_javascript %}
+<script>
+setTimeout(function() {
+    window.location.href= {% url 'home' %}
+}, 2000);
+</script>
+{% endblock %}
