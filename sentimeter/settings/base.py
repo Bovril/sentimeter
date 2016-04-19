@@ -43,7 +43,11 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sentimeter'
+    'sentimeter',
+    'sentimeter.apps.sent_api',
+    'sentimeter.apps.sent_app',
+    'rest_framework',
+
 )
 
 MIDDLEWARE_CLASSES = (
@@ -115,3 +119,8 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10
+}
