@@ -1,0 +1,12 @@
+{% block forms %}
+	<form role="form" action="classify/" method="get">
+        <div class="form-group">
+            <label for="tweet">Tweet:</label>
+            <input type="text" class="form-control" name="q" placeholder="Tweet here">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-lg" value="Classify">
+        </div>
+    </form>
+
+{% endblock forms %}

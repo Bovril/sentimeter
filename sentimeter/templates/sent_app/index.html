@@ -11,7 +11,9 @@
     <div class="container">
         <h1>{% trans "Welcome to Sentimeter!"%}</h1>
         <p>{% blocktrans %}Smiple web application and API for sentiment analysis{% endblocktrans %}</p>
-        {% include "sentimeter/forms.html" %}
+        <div class="row">
+            {% include "sent_app/forms.html" %}
+        </div>
       </div>
     </div>
 </div>
@@ -24,22 +26,8 @@
         <p>This is the time using your local information </p>
         <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
       </div>
-      <div class="col-md-4">
-        <h2 id="non-local-date">{{today|unlocalize}}</h2>
-        <p>This is the default time format.</p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <h2>Time Zones</h2>
-        <p> Bor: <span id="time-tz">{{now|time:"H:i"}}</span></p>
-        <p> UTC: <span id="time-utc">{{now|utc|time:"H:i"}}</span></p>
-        <p> New York: <span id="time-ny"> 
-               {{now|timezone:"America/New_York"|time:"H:i"}}</span></p>
-        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-      </div>
     </div>
   </div> <!-- /container -->
 
 
   {% endblock content %}
-

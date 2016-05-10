@@ -25,5 +25,6 @@ urlpatterns += i18n_patterns(
     url(r'^search/$', search, name='search'),
     url(r'^success$', feedback_thanks, name='success'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^app/$', include('sentimeter.apps.sent_app.urls')),
+    url(r'^app/', include('sentimeter.apps.sent_app.urls')),
+
 )
